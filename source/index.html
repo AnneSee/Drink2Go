@@ -2,13 +2,77 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="UTF-8">
-    <title>Название проекта</title>
+    <title>Drink2Go</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page__body">
-    <header class="header">Шапка</header>
-
+    <header class="main-header">
+      <!-- Логотип -->
+      <a class="main-header__link logo" href="./index.html" aria-label="интернет-магазин по продаже кофейных напитков.">
+        <picture>
+          <img class="logo__image" src="img/logo-small.svg" width="32" height="36" alt="Логотип магазина Drinl2Go.">
+        </picture>
+        <span class="logo__text">Интернет-магазин кофейных напитков</span>
+      </a>
+      <!-- nav = (ul li войти и корзина) + (button - скрывает главная каталог доставка о нас)-->
+      <!-- Навигация: Войти Корзина Бургер-меню-->
+      <nav class="main-header__nav navigation">
+        <!--Возможно объединить баттон и враппер в один див, чтобы повесить класс актив(меню баттон) переключал и открывал меню-->
+        <button class="navigation__toggle" type="button">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
+        <div class="navigation__wrapper">
+          <ul class="navigation__list site-list">
+            <li class="site-list__item site-list__item--active">
+              <a class="navigation__link navigation__link--active" href="index.html">Главная</a>
+            </li>
+            <li class="site-list__item site-list__item--active">
+              <a class="navigation__link navigation__link--active" href="catalog.html">Каталог</a>
+            </li>
+            <li class="site-list__item site-list__item--active">
+              <a class="navigation__link navigation__link--active" href="delivery.html">Доставка</a>
+            </li>
+            <li class="site-list__item site-list__item--active">
+              <a class="navigation__link navigation__link--active" href="aboutus.html">О нас</a>
+            </li>
+          </ul>
+          <div class="navigation_list user_list">
+            <!-- a,svg,use,svg,span,a-->
+            <a class="user-list__link" href="login.html">
+              <svg class="user-list__login-icon" width="16" height="16">
+                <use xlink:href="img/icons/sprite.svg#icon-login"></use>
+              </svg>
+              Войти
+            </a>
+            <a class="user-list__link" href="shopping.html">
+              <svg class="user-list__login-shopping" width="16" height="16">
+                <use xlink:href="img/icons/sprite.svg#icon-shopping"></use>
+              </svg>
+              Корзина
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="main-container">
+      <h1 class="visually-hidden">интернет-магазин кофейных напитков Drink2Go</h1>
+      <section>
+        <!-- секция слайдера(пролистывания товаров) -->
+      </section>
+      <section>
+        <!-- секция преимущемств -->
+      </section>
+      <section>
+        <!-- секция каталога - фильтр и сортировка, внизу пагинация (седона1)-->
+      </section>
+      <section>
+        <!-- секция карты -->
+      </section>
+    </main>
+    <footer>
+      <!-- хедер-футер, сошиал, навигация, медиа, контакты, разработано -->
+    </footer>
     <script src="./js/script.js" defer></script>
   </body>
 </html>
