@@ -28,7 +28,7 @@
               <a class="navigation__link navigation__link--active" href="index.html">Главная</a>
             </li>
             <li class="site-list__item site-list__item--active">
-              <a class="navigation__link navigation__link--active" href="catalog.html">Каталог</a>
+              <a class="navigation__link navigation__link--active" href="#catalog">Каталог</a>
             </li>
             <li class="site-list__item site-list__item--active">
               <a class="navigation__link navigation__link--active" href="delivery.html">Доставка</a>
@@ -57,14 +57,61 @@
     </header>
     <main class="main-container">
       <h1 class="visually-hidden">интернет-магазин кофейных напитков Drink2Go</h1>
-      <section>
+      <section class="hero">
         <!-- секция слайдера(пролистывания товаров) -->
+        <header class="hero__header heading">
+          <p class="heading__text">Новинка!</p>
+        </header>
+        <div class="hero__slider random-product" id="slider">
+          <h2 class="random-product__header">Декаф Флэт Уайт</h2>
+          <p class="random-product__text">Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
+          <div class="random-product__wrapper">
+            <div class="random-product__add-price add-price">
+              <p class="add-price__old">295₽</p>
+              <p class="add-price__new">225₽</p>
+            </div>
+            <a class="button button--order" href="#catalog">
+              <!-- возможно slider button класс -->
+              Заказать
+            </a>
+          </div>
+          <!-- <p style="color: red">random text</p>
+          <p>random text</p> -->
+        </div>
       </section>
-      <section>
-        <!-- секция преимущемств -->
+      <section class="advantages">
+        <!-- секция преимущемств, возможно див враппе внутри-->
+        <header class="advantages__header heading">
+          <p class="heading__text">Преимущества</p>
+          <h2 class="heading__header">Главные причины выбрать Drink2Go</h2>
+        </header>
+        <ul class="advantages__list">
+          <li class="advantages__item">
+            <h3 class="advantages__title">Скорость</h3>
+            <p class="advantages__text">Готовый напиток всегда под рукой — просто открой банку</p>
+          </li>
+          <li class="advantages__item">
+            <h3 class="advantages__title">Удобство</h3>
+            <p class="advantages__text">Легко помещается и в карман,<br>и в маленькую сумочку</p>
+          </li>
+          <li class="advantages__item">
+            <h3 class="advantages__title">Бодрость</h3>
+            <p class="advantages__text">Сбалансированная доза кофеина даст мощный заряд энергии</p>
+          </li>
+          <li class="advantages__item">
+            <h3 class="advantages__title">Экологичность</h3>
+            <p class="advantages__text">Вся упаковка сделана<br>из перерабатываемых материалов</p>
+          </li>
+        </ul>
       </section>
-      <section>
+      <section class="catalog" id="catalog">
         <!-- секция каталога - фильтр и сортировка, внизу пагинация (седона1)-->
+        <header class="catalog__header heading">
+          <p class="heading__text">Каталог</p>
+          <h2 class="heading__header">Каталог кофейных напитков</h2>
+        </header>
+        <!-- 1 блок цена, 1 блок наличие, 1 блок странаб 1 блок применить сбросить -->
+
       </section>
       <section>
         <!-- секция карты -->
