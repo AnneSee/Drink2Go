@@ -1,1 +1,43 @@
-/* здесь используйте глобальные переменные */
+// Viewports
+$mobile-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1440px;
+$mobile-only-width: 767px;
+
+// Colors
+// Base Colors
+$base-white: #FFFFFF;
+$base-grey: #BDBDBD;
+$base-black: #333333;
+$base-primary: #7859CF;
+$base-secondary: #F0EBFF;
+
+// Alt Colors
+$primary-opacity: rgba(120, 89, 207, 0.25);
+$primary-lighter: #9070EC;
+$primary-darker: #593CAC;
+$light-grey: #E2E2E2;
+
+//  Background Colors
+$lightest-grey: #F8F8F8;
+$flat-white: #F3EBE1;
+$lavender-latte: #EAE6FC;
+$espresso: #E5E6E8;
+
+// Font-main
+$font-main: "Montserrat", "Verdana", sans-serif;
+
+//Font-size
+$font-size: (
+  small: 12px,
+  medium: 16px,
+  main: 14px,
+  //h1,h2.h3 из макета вытащить
+);
+
+$line-height: (
+  small: 16px,
+  medium: 24px,
+  main: 20px,
+);
+

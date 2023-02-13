@@ -1,0 +1,22 @@
+@use "..global/variables.scss";
+
+.page {
+  height: 100%;
+  font-size: map-get(variables.$font-size,main);
+  font-family: variables.$font-main;
+  line-height: map-get(variables.$line-height, main);
+}
+
+.page__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+  font-family: variables.$font-main;;
+  font-size: map-get(variables.$font-size,main);
+  line-height: map-get(variables.$line-height, main);
+  font-weight: 400;
+  //Цвет шрифта основной
+  color: variables.$base-black;
+  background-color: variables.$base-white;
+}
