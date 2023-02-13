@@ -1,18 +1,17 @@
-/* GLOBAL */
-@use "./global/variables.scss";
-@use "./global/global.scss";
-@use "./global/fonts.scss";
-@use "./global/visually-hidden.scss";
+// GLOBAL
+@import "global/variables";
+@import "global/global";
+@import "global/fonts";
+@import "global/visually-hidden";
 
-/* BLOCKS */
-@use "./blocks/page.scss";
-@use "./blocks/main-header.scss";
-@use "./blocks/logo.scss";
-@use "./blocks/navigation.scss";
+// BLOCKS
+@import "blocks/page";
+@import "blocks/main-header";
+@import "blocks/logo";
+@import "blocks/navigation";
+
+@import "blocks/header";
 
 
-@use "./blocks/header.scss";
-
-
-@use "./blocks/hero.scss";
+@import "blocks/hero";
 

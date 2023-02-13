@@ -1,6 +1,6 @@
 /* здесь используйте глобальные селекторы img, body, html и так далее*/
-@use "./variables.scss";
-@use "./fonts.scss";
+@use "variables";
+@use "fonts";
 
 // Уточнить в процессе стилизации
 // a {
