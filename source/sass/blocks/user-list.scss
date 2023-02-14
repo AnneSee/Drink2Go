@@ -1,0 +1,86 @@
+@use "../global/variables";
+
+.user-list {
+  // outline: 5px solid rgba(0, 255, 0, 0.8);
+  // outline-offset: -5px;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .user-list {
+    width: 120px;
+  }
+}
+
+@media (min-width: variables.$desktop-width) {
+  .user-list {
+    width: 260px;
+  }
+}
+
+// .user-list__item {
+
+// }
+
+
+.user-list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+
+  &:active {
+    background-color: variables.$base-secondary;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    height: 80px;
+
+    &:hover,
+    &:focus {
+      color: variables.$base-primary;
+    }
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    flex-shrink: 0;
+    width: auto;
+    margin-left: 20px;
+    padding: 0 20px;
+
+    font-family: variables.$font-main;;
+    font-size: map-get(variables.$font-size, small);
+    line-height: map-get(variables.$line-height, small);
+    font-weight: 500;
+    color: variables.$base-black;
+
+    &:hover,
+    &:focus {
+      color: variables.$base-primary;
+    }
+  }
+}
+
+.user-list__login-icon {
+  flex-shrink: 0;
+}
+
+.user-list__login-text {
+  // display: none;
+
+  @media (min-width: variables.$tablet-width) {
+    display: inline;
+    margin-left: 8px;
+    font-size: map-get(variables.$font-size, small);
+    line-height: map-get(variables.$line-height, small);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
