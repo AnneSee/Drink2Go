@@ -1,0 +1,59 @@
+@use "../global/variables";
+
+.advantages {
+  background-color: variables.$base-white;
+}
+
+.advantages__wrapper {
+  min-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 50px;
+  text-align: center;
+
+  @media (min-width: variables.$tablet-width) {
+    min-width: variables.$tablet-width;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: variables.$desktop-width;
+  }
+}
+
+.advantages__header {
+  background-color: variables.$base-white;
+}
+
+.advantages__list {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.advantages__item {
+  list-style-type: none;
+}
+
+.advantages__title {
+  display: block;
+  margin-bottom: 4px;
+  font-family: variables.$font-main;;
+  font-size: map-get(variables.$font-size, h3);
+  line-height: map-get(variables.$line-height, h3);
+  font-weight: 700;
+  color: variables.$base-black;
+}
+
+.advantages__text {
+  margin: 0;
+  font-family: variables.$font-main;;
+  font-size: map-get(variables.$font-size, main);
+  line-height: map-get(variables.$line-height, main);
+  font-weight: 400;
+  color: variables.$base-black;
+}

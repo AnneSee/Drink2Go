@@ -1,0 +1,24 @@
+@use "../global/variables";
+
+.heading__text {
+  display: block;
+  text-transform: uppercase;
+  font-family: variables.$font-main;;
+  font-size: map-get(variables.$font-size, small);
+  line-height: map-get(variables.$line-height, small);
+  font-weight: 700;
+  color: variables.$base-primary;
+  margin-bottom: 5px;
+}
+
+.heading__header {
+  font-family: variables.$font-main;;
+  font-size: map-get(variables.$font-size, h2);
+  line-height: map-get(variables.$line-height, h2);
+  font-weight: 700;
+  color: variables.$base-black;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 36px;
+  margin-left: 0;
+}

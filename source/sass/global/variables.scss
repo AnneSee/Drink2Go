@@ -30,14 +30,18 @@ $font-main: "Montserrat", "Verdana", sans-serif;
 //Font-size
 $font-size: (
   small: 12px,
-  medium: 16px,
   main: 14px,
+  medium: 16px,
+  h3: 18px,
+  h2: 24px,
   //h1,h2.h3 из макета вытащить
 );
 
 $line-height: (
   small: 16px,
-  medium: 24px,
   main: 20px,
+  medium: 24px,
+  h3: 32px,
+  h2: 36px,
 );
 
