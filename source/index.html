@@ -18,52 +18,58 @@
         <!-- Логотип -->
         <a class="main-header__link logo" href="index.html" aria-label="интернет-магазин по продаже кофейных напитков.">
           <picture>
+            <source media="(min-width: 1024px)" srcset="img/main-logo-large.svg">
+            <source media="(min-width: 768px)" srcset="img/main-logo-medium.svg">
             <img class="logo__image" src="img/main-logo-small.svg" width="32" height="36" alt="Логотип магазина Drinl2Go.">
           </picture>
           <span class="visually-hidden">Интернет-магазин кофейных напитков</span>
         </a>
-        <!-- nav = (ul li войти и корзина) + (button - скрывает главная каталог доставка о нас)-->
-        <!-- Навигация: Войти Корзина Бургер-меню-->
-        <nav class="main-header__nav navigation">
-          <!--Возможно объединить баттон и враппер в один див, чтобы повесить класс актив(меню баттон) переключал и открывал меню-->
-          <button class="navigation__toggle" type="button">
+        <!-- Навигация: Меню сайта -->
+        <!-- main-header__site-nav класс БЭМа, site-nav свой класс
+        main-header__site-nav--nojs без js
+        main-header__site-nav--opened открыть меню -->
+        <nav class="main-header__site-nav site-nav main-header__site-nav--nojs main-header__site-nav--opened">
+          <button class="site-nav__toggle menu-toggle" type="button" aria-label="Меню сайта.">
             <span class="visually-hidden">Открыть меню</span>
+            <span class="menu-toggle__open"></span>
+            <span class="menu-toggle__closed"></span>
           </button>
-          <div class="navigation__wrapper">
-            <ul class="navigation__list site-list">
-              <li class="site-list__item site-list__item--active">
-                <a class="site-list__link navigation__link--active" href="index.html">Главная</a>
-              </li>
-              <li class="site-list__item site-list__item--active">
-                <a class="site-list__link navigation__link--active" href="#catalog">Каталог</a>
-              </li>
-              <li class="site-list__item site-list__item--active">
-                <a class="site-list__link navigation__link--active" href="#">Доставка</a>
-              </li>
-              <li class="site-list__item site-list__item--active">
-                <a class="site-list__link navigation__link--active" href="#">О нас</a>
-              </li>
-            </ul>
-            <ul class="navigation__list user-list">
-              <li class="user-list__item">
-                <!-- a,svg,use,svg,span,a-->
-                <a class="user-list__link" href="#">
-                  <svg class="user-list__login-icon" width="16" height="16">
-                    <use xlink:href="img/icons/sprite.svg#icon-login"></use>
-                  </svg>
-                  <span class="user-list__login-text">Войти</span>
-                </a>
-              </li>
-              <li class="user-list__item">
-                <a class="user-list__link" href="#">
-                  <svg class="user-list__login-shopping" width="16" height="16">
-                    <use xlink:href="img/icons/sprite.svg#icon-shopping"></use>
-                  </svg>
-                  <span class="user-list__login-text">Корзина</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <ul class="site-nav__list site-list">
+            <li class="site-list__item">
+              <a class="site-list__link site-list__link--current" href="index.html">Главная</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#catalog">Каталог</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Доставка</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">О нас</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Навигация: Личный кабинет сайта -->
+        <nav class="main-header__user-nav user-nav">
+          <ul class="navigation__list user-list">
+            <li class="user-list__item">
+              <a class="user-list__link" href="#">
+                <svg class="user-list__login-icon"
+                width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false">
+                  <use xlink:href="img/icons/sprite.svg#icon-login"></use>
+                </svg>
+                <span class="user-list__login-text">Войти</span>
+              </a>
+            </li>
+            <li class="user-list__item">
+              <a class="user-list__link" href="#">
+                <svg class="user-list__login-shopping" width="16" height="16">
+                  <use xlink:href="img/icons/sprite.svg#icon-shopping"></use>
+                </svg>
+                <span class="user-list__login-text">Корзина</span>
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
@@ -174,6 +180,7 @@
           </ul>
         </div>
       </section>
+      <!-- Секция: Каталог -->
       <section class="catalog" id="catalog">
         <!-- секция каталога - фильтр и сортировка, внизу пагинация (седона1)-->
         <header class="catalog__header heading">
@@ -302,25 +309,118 @@
           <!-- Карточки товаров -->
           <!-- картинки с названием coffee-beige -->
           <ul class="catalog__list">
+            <!-- Белый -->
             <li class="catalog__item product-card">
               <a class="product-card__link" href="#">
-                <img class="product-card__image" src="" width="130" height="188" alt="Декаф Флэт Уайт.">
+                <img class="product-card__image" src="img/catalog/coffee-white.jpg" width="130" height="188" alt="Декаф Флэт Уайт Белый.">
               </a>
               <a class="product-card__link" href="#">
                 <h3 class="product-card__title">Декаф Флэт Уайт</h3>
               </a>
               <p class="product-card__desc">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
-              <div class="card__wrapper">
+              <div class="product-card__wrapper">
                 <span class="product-card__price">225₽</span>
-                <button class="product-card__button button--icon" type="button">В корзину</button>
+                <a class="product-card__button button--icon" href="#catalog" aria-label="в корзину.">
+                  <span class="product-card__price">В корзину</span>
+                </a>
+              </div>
+            </li>
+            <!-- Лавандовый -->
+            <li class="catalog__item product-card">
+              <a class="product-card__link" href="#">
+                <img class="product-card__image" src="img/catalog/coffee-lavander.jpg" width="130" height="188" alt="Декаф Флэт Уайт Лавандовый.">
+              </a>
+              <a class="product-card__link" href="#">
+                <h3 class="product-card__title">Декаф Флэт Уайт</h3>
+              </a>
+              <p class="product-card__desc">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="product-card__wrapper">
+                <span class="product-card__price">225₽</span>
+                <a class="product-card__button button--icon" href="#catalog" aria-label="в корзину.">
+                  <span class="product-card__price">В корзину</span>
+                </a>
+              </div>
+            </li>
+            <!-- Эспрессо -->
+            <li class="catalog__item product-card">
+              <a class="product-card__link" href="#">
+                <img class="product-card__image" src="img/catalog/coffee-espresso.jpg" width="130" height="188" alt="Декаф Флэт Уайт Эспрессо.">
+              </a>
+              <a class="product-card__link" href="#">
+                <h3 class="product-card__title">Декаф Флэт Уайт</h3>
+              </a>
+              <p class="product-card__desc">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="product-card__wrapper">
+                <span class="product-card__price">225₽</span>
+                <a class="product-card__button button--icon" href="#catalog" aria-label="в корзину.">
+                  <span class="product-card__price">В корзину</span>
+                </a>
+              </div>
+            </li>
+            <!-- Пурпурный -->
+            <li class="catalog__item product-card">
+              <a class="product-card__link" href="#">
+                <img class="product-card__image" src="img/catalog/coffee-purple.jpg" width="130" height="188" alt="Декаф Флэт Уайт Пурпурный.">
+              </a>
+              <a class="product-card__link" href="#">
+                <h3 class="product-card__title">Декаф Флэт Уайт</h3>
+              </a>
+              <p class="product-card__desc">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="product-card__wrapper">
+                <span class="product-card__price">225₽</span>
+                <a class="product-card__button button--icon" href="#catalog" aria-label="в корзину.">
+                  <span class="product-card__price">В корзину</span>
+                </a>
+              </div>
+            </li>
+            <!-- Коричневый -->
+            <li class="catalog__item product-card">
+              <a class="product-card__link" href="#">
+                <img class="product-card__image" src="img/catalog/coffee-brown.jpg" width="130" height="188" alt="Декаф Флэт Уайт Коричневый.">
+              </a>
+              <a class="product-card__link" href="#">
+                <h3 class="product-card__title">Декаф Флэт Уайт</h3>
+              </a>
+              <p class="product-card__desc">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="product-card__wrapper">
+                <span class="product-card__price">225₽</span>
+                <a class="product-card__button button--icon" href="#catalog" aria-label="в корзину.">
+                  <span class="product-card__price">В корзину</span>
+                </a>
+              </div>
+            </li>
+            <!-- Бежевый -->
+            <li class="catalog__item product-card">
+              <a class="product-card__link" href="#">
+                <img class="product-card__image" src="img/catalog/coffee-beige.jpg" width="130" height="188" alt="Декаф Флэт Уайт Бежевый.">
+              </a>
+              <a class="product-card__link" href="#">
+                <h3 class="product-card__title">Декаф Флэт Уайт</h3>
+              </a>
+              <p class="product-card__desc">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="product-card__wrapper">
+                <span class="product-card__price">225₽</span>
+                <a class="product-card__button button--icon" href="#catalog" aria-label="в корзину.">
+                  <span class="product-card__price">В корзину</span>
+                </a>
               </div>
             </li>
           </ul>
         </div>
       </section>
-      <section>
-        <!-- секция карты -->
-
+      <!-- Секция: Карта -->
+      <!-- map point - картинка точки -->
+      <section class="location">
+        <h2 class="visually-hidden">Drink2Go на карте.</h2>
+          <!-- <source type="image/webp" media="(min-width: 1024px)" srcset="img/map-desktop.webp 1x, img/map-desktop@2x.webp 2x"> -->
+        <picture>
+          <source type="image/webp" media="(min-width: 1024px)" srcset="img/map-desktop.webp">
+          <source type="image/webp" media="(min-width: 768px)" srcset="img/map-tablet.webp">
+          <source type="image/webp" srcset="img/map-mobile.webp">
+          <source media="(min-width: 1024px)" srcset="img/map-desktop.jpg">
+          <source media="(min-width: 768px)" srcset="img/map-tablet.jpg">
+          <img class="map__image-map" src="img/map-mobile.jpg" width="320" height="420" alt="Drink2Go на карте.">
+        </picture>
       </section>
     </main>
     <footer class="main-footer">
@@ -383,6 +483,7 @@
       </div>
       </div>
     </footer>
-    <script src="js/script.js" defer></script>
+    <!-- <script src="js/script.js" defer></script>
+    <script src="js/navigation.js"></script> -->
   </body>
 </html>
