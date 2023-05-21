@@ -1,0 +1,70 @@
+@use "../global/variables";
+
+.menu-toggle {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin: 0;
+  padding: 22px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:active {
+    background-color: variables.$base-secondary;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.menu-toggle__open {
+  position: relative;
+  width: 16px;
+  height: 2px;
+  background-color: variables.$base-black;
+  transition: 0.2s all;
+  transform-origin: left center;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 2px;
+    background-color: variables.$base-black;
+    transform-origin: center;
+    transition: 0.2s all;
+  }
+
+  &::before {
+    top: -5px;
+  }
+
+  &::after {
+    top: 5px;
+  }
+}
+
+.menu-toggle--open {
+  .menu-toggle__open {
+    background-color: transparent;
+
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+@use "../global/variables";
+
+.pagination__page {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: initial;
+  }
+}

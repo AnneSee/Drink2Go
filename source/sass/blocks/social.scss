@@ -1,0 +1,54 @@
+@use "../global/variables";
+
+.social__list {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: variables.$min-desktop-width) {
+    margin-left: 0;
+  }
+}
+
+.social__item {
+  margin-right: 20px;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.social__link {
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+
+  svg {
+    vertical-align: top;
+    color: variables.$base-grey;
+  }
+
+  @media (min-width: variables.$min-desktop-width) {
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: variables.$base-secondary;
+
+      svg {
+        color: variables.$base-primary;
+      }
+    }
+
+    &:active {
+      background-color: variables.$primary-opacity;
+
+      svg {
+        color: variables.$base-primary;
+      }
+    }
+  }
+}

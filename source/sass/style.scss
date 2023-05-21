@@ -9,26 +9,26 @@
 @import "blocks/logo";
 @import "blocks/site-nav";
 @import "blocks/user-nav";
-@import "blocks/site-list";
-@import "blocks/user-list";
+@import "blocks/menu-toggle.scss";
 @import "blocks/main-container";
-@import "blocks/swiper";
 @import "blocks/hero";
+@import "blocks/swiper";
 @import "blocks/adv-price";
 @import "blocks/advantages";
 @import "blocks/heading";
 @import "blocks/catalog";
-@import "blocks/form";
-@import "blocks/apply-filter";
+@import "blocks/button";
+@import "blocks/form-group";
+@import "blocks/price";
+@import "blocks/label";
+@import "blocks/input";
+@import "blocks/range";
 @import "blocks/sorting";
-@import "blocks/location";
+@import "blocks/pagination";
+@import "blocks/map";
 @import "blocks/main-footer";
-@import "blocks/footer-logo";
 @import "blocks/social";
-
-
-
-// @import "blocks/header";
+@import "blocks/copyration";
 
 
 

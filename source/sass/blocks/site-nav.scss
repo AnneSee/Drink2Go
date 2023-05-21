@@ -1,20 +1,104 @@
 @use "../global/variables";
 
-// .navigation {
-// //   // outline: 5px solid rgba(255, 0, 0, 0.8);;
-// //   // outline-offset: -3px;
-//   display: flex;
-//   flex-wrap: wrap;
-// }
+.site-nav {
+  width: 100%;
 
-@media (min-width: variables.$tablet-width) {
-  .site-nav__toggle {
-    display: none;
+  @media (min-width: variables.$tablet-width) {
+    width: auto;
   }
+
+  // @media (min-width: variables.$desktop-width) {
+  //   margin: 0 auto;
+  // }
 }
 
 .site-nav__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+  // margin: 0;
+  // padding: 0;
+  list-style-type: none;
+  background-color: variables.$base-white;
+
+  @media (min-width: variables.$tablet-width) {
+    flex-direction: row;
+  }
+
+  @media (min-width: variables.$min-desktop-width) {
+    margin-right: 20px;
+  }
+}
+
+.site-nav__item {
+  border-top: 1px solid variables.$base-secondary;
+
+  &:last-of-type {
+    border-bottom: 1px solid variables.$base-secondary;
+  }
+
+  &:active {
+    .site-navigation__link {
+      background-color: variables.$base-secondary;
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    position: relative;
+    border: none;
+
+    &:last-of-type {
+      border: none;
+    }
+
+    &:active {
+      .site-nav__link {
+        color: variables.$base-primary;
+        background-color: variables.$base-secondary;
+      }
+    }
+
+    &--current {
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: variables.$base-primary;
+      }
+
+      .site-nav__link {
+        color: variables.$base-primary;
+        background-color: variables.$base-white;
+      }
+    }
+  }
+}
+
+.site-nav__link {
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 20px 0;
+  font-family: variables.$font-main;
+  font-size: map-get(variables.$font-size, small);
+  line-height: map-get(variables.$line-height, small);
+  font-weight: 500;
+  background-color: variables.$base-white;
+  color: variables.$base-black;
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 32px 20px;
+  }
+
+  @media (min-width: variables.$min-desktop-width) {
+    &:hover,
+    &:focus {
+      color: variables.$base-primary;
+    }
+  }
 }

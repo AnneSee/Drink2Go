@@ -1,5 +1,12 @@
 node_modules
+.git
+.github
 *.min.*
 build
 .idea
 .DS_Store
+catalog.html
+catalogOld.scss
+form.scss
+range.scss
+sortingOld.scss

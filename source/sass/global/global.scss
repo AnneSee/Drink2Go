@@ -1,22 +1,26 @@
-/* здесь используйте глобальные селекторы img, body, html и так далее*/
 @use "variables";
 @use "fonts";
 
-// Уточнить в процессе стилизации
-// a {
-//   color: variables.$base-black;
-//   text-decoration: none;
-
-//   &:focus-visible {
-//       outline: 2px solid variables.$base-primary;
-//   }
-// }
-
-// Из моей Седоны:
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  color: variables.$base-black;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 2px solid variables.$base-primary;
+  }
 }
 
 img {
@@ -24,6 +28,7 @@ img {
   height: auto;
   // contain — сохранить пропорции оригинальной картинки
   object-fit: contain;
+  display: block;
 }
 
 .visually-hidden {

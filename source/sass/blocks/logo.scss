@@ -4,6 +4,10 @@
   display: flex;
   align-items: center;
   margin-right: auto;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .logo-image {
@@ -16,5 +20,17 @@
 
   @media (min-width: variables.$desktop-width) {
     width: 170px;
+  }
+}
+
+.logo__text {
+  display: none;
+
+  @media (min-width: variables.$min-desktop-width) {
+    display: inline;
+    margin-left: 20px;
+    width: 180px;
+    font-size: map-get(variables.$font-size, small);
+    line-height: map-get(variables.$line-height, small);
   }
 }

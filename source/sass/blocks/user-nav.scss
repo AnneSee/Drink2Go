@@ -1,1 +1,66 @@
 @use "../global/variables";
+// .user-nav {}
+
+
+.user-nav__list {
+  display: flex;
+  list-style-type: none;
+
+  @media (min-width: variables.$tablet-width) {
+    gap: 20px;
+  }
+}
+
+// .user-nav__item {
+
+// }
+
+.user-nav__link {
+  display: inline-flex;
+  padding: 22px;
+  color: variables.$base-black;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-decoration: none;
+
+  &:active {
+    background-color: variables.$base-secondary;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 32px 22px;
+  }
+
+  @media (min-width: variables.$min-desktop-width) {
+    padding: 32px 20px;
+
+    &:hover,
+    &:focus {
+      color: variables.$base-primary;
+
+      svg {
+        color: variables.$base-primary;
+      }
+    }
+  }
+}
+
+.user-nav__icon {
+  vertical-align: top;
+
+  @media (min-width: variables.$min-desktop-width) {
+    margin-right: 8px;
+  }
+}
+
+.user-nav__login-text {
+  display: none;
+
+  @media (min-width: variables.$min-desktop-width) {
+    display: initial;
+  }
+}

@@ -1,0 +1,78 @@
+@use "../global/variables";
+
+.button {
+  display: block;
+  white-space: nowrap;
+  padding: 8px 20px;
+  font-family: variables.$font-main;
+  font-size: map-get(variables.$font-size, medium);
+  line-height: map-get(variables.$line-height, medium);
+  color: variables.$base-white;
+  background-color: variables.$base-primary;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+
+  &--submit {
+    padding: 10px 15px;
+    font-size: 13px;
+    line-height: map-get(variables.$line-height, medium);
+  }
+
+  &--reset {
+    padding: 10px 16px;
+    font-size: map-get(variables.$font-size, main);
+    line-height: map-get(variables.$line-height, medium);
+    color: variables.$base-primary;
+    background-color: variables.$base-white;
+  }
+
+  &--cart {
+    position: relative;
+    padding: 8px 20px 8px 46px;
+    font-size: map-get(variables.$font-size, small);
+    line-height: map-get(variables.$line-height, small);
+  }
+
+  &--cart::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 16px;
+    background-image: url("../../img/add-basket.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+@media (min-width: variables.$min-desktop-width) {
+  .button {
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: variables.$primary-lighter;
+    }
+
+    &:active {
+      background-color: variables.$primary-darker;
+    }
+
+    &:disabled {
+      background-color: variables.$base-grey;
+    }
+
+    &--reset {
+      &:hover,
+      &:focus,
+      &:active {
+        color: variables.$base-white;
+      }
+    }
+  }
+}

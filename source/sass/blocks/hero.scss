@@ -1,19 +1,282 @@
 @use "../global/variables";
 
-.hero__item--decaf-flat-white {
-  content: "";
-  background-image: url("../img/flat-white-img.png");
-  background-repeat: no-repeat;
+.hero {
+  position: relative;
 }
 
-.hero__item--lavander-latte {
-  content: "";
-  background-image: url("../img/lavender-img.png");
-  background-repeat: no-repeat;
+// .hero__list {
+
+// }
+
+.hero__item {
+  height: auto;
+  text-align: center;
+
+  &--decaf-flat-white {
+    background-color: variables.$flat-white;
+  }
+
+  &--lavander-latte {
+    background-color: variables.$lavender-latte;
+  }
+
+  &--espresso {
+    background-color: variables.$espresso;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 188px;
+      background-color: variables.$base-white;
+    }
+  }
+
+  @media (min-width: variables.$min-desktop-width) {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 80px 84px;
+    text-align: left;
+
+    &::after {
+      display: none;
+    }
+  }
 }
 
-.hero__item--espresso {
-  content: "";
-  background-image: url("../img/espresso-img.png");
-  background-repeat: no-repeat;
+.hero__image-wrapper {
+  z-index: 1;
+  min-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 20px 60px;
+
+  @media (min-width: variables.$tablet-width) {
+    min-width: variables.$tablet-width;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 60px 60px 0;
+  }
+
+  @media (min-width: variables.$min-desktop-width) {
+    max-width: variables.$desktop-width;
+    flex-direction: row-reverse;
+    margin: 0 auto;
+    padding: 0 40px;
+    padding: 30px 80px 80px;
+    text-align: left;
+  }
+}
+
+.hero__picture {
+  display: block;
+  margin-bottom: 10px;
+
+  @media (min-width: variables.$tablet-width) {
+    order: 1;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: variables.$min-desktop-width) {
+    flex-shrink: 0;
+    width: 600px;
+    margin-left: 25px;
+  }
+}
+
+.hero__image {
+  @media (min-width: variables.$tablet-width) {
+    width: auto;
+    height: auto;
+  }
+}
+
+.hero__card-wrapper {
+  padding: 0 20px;
+
+  @media (min-width: variables.$min-desktop-width) {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    padding-top: 150px;
+    padding-right: 30px;
+  }
+}
+
+.hero__text {
+  margin-bottom: 5px;
+  font-family: $font-main;
+  font-size: map-get(variables.$font-size, small);
+  line-height: map-get(variables.$line-height, small);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: variables.$base-primary;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 5px;
+  }
+}
+
+.hero__header {
+  margin: 0 0 10px;
+  font-family: $font-main;
+  font-size: map-get(variables.$font-size, large);
+  line-height: map-get(variables.$line-height, large);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: variables.$base-black;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 15px;
+    font-size: 56px;
+    line-height: 80px;
+  }
+}
+
+.hero__description {
+  margin: 0 0 20px;
+  font-family: $font-main;
+  font-weight: 400;
+  font-size: map-get(variables.$font-size, main);
+  line-height: map-get(variables.$line-height, main);
+  text-align: center;
+  color: variables.$base-black;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 20px;
+    font-size: map-get(variables.$font-size, small);
+    line-height: map-get(variables.$line-height, small);
+  }
+
+  @media (min-width: variables.$min-desktop-width) {
+    margin-bottom: 40px;
+  }
+}
+
+.hero__promo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: variables.$min-desktop-width) {
+    justify-content: flex-start;
+  }
+}
+
+.hero__adv-price {
+  // display: flex;
+
+  &--old {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: map-get(variables.$font-size, medium);
+    line-height: map-get(variables.$line-height, h3);
+    text-decoration-line: line-through;
+    color: variables.$base-primary;
+  }
+
+  &--new {
+    font-family: $font-main;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: map-get(variables.$line-height, h3);
+    color: variables.$base-black;
+  }
+}
+
+.hero__button-link {
+  margin-left: 20px;
+  padding: 8px 20px;
+  font-family: variables.$font-main;
+  font-size: map-get(variables.$font-size, medium);
+  line-height: map-get(variables.$line-height, medium);
+  color: variables.$base-white;
+  background-color: variables.$base-primary;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+}
+
+.hero__pagination {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: variables.$base-primary;
+
+  &--back {
+    left: -4px;
+  }
+
+  &--next {
+    right: -4px;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    top: -93px;
+    width: 80px;
+
+    &--back {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  @media (min-width: variables.$min-desktop-width) {
+    &--back {
+      top: 0;
+      background-color: transparent;
+      padding: 0 35px 0;
+
+      &:hover,
+      &:focus {
+        background: linear-gradient(to right, variables.$base-white, rgba(255, 255, 255, 0));
+      }
+
+      &:active {
+        background: linear-gradient(to right, rgba(120, 89, 207, 0.25), rgba(120, 89, 207, 0));
+      }
+
+      &:disabled {
+        color: variables.$base-grey;
+      }
+    }
+
+    &--next {
+      top: 0;
+      background-color: transparent;
+      padding: 0 35px 0;
+
+      &:hover,
+      &:focus {
+        background: linear-gradient(to left, variables.$base-white, rgba(255, 255, 255, 0));
+      }
+
+      &:active {
+        background: linear-gradient(to left, rgba(120, 89, 207, 0.25), rgba(120, 89, 207, 0));
+      }
+
+      &:disabled {
+        color: variables.$base-grey;
+      }
+    }
+  }
 }
